@@ -20,16 +20,16 @@ function selectPlayer(element) {
         playerArray.push(selectPlayerName);
         document.getElementById('selected-player-number').innerText = playerArray.length;
         element.disabled = true;
-        element.style.backgroundColor = 'salmon';
+        element.style.backgroundColor = '#cccccc';
         display(playerArray);
     }
     else {
-        alert('already selected 5 players');
+        alert('Already Added 5 Players !!! You cant add more than 5 Players');
     }
 }
 
 //function for get input field value by id using .value
-function getInputFieldValueById(inputFieldId){
+function getInputFieldValueById(inputFieldId) {
     const inputField = document.getElementById(inputFieldId);
     const inputFieldValueString = inputField.value;
     const inputFieldValue = parseFloat(inputFieldValueString);
@@ -37,7 +37,7 @@ function getInputFieldValueById(inputFieldId){
 }
 
 //function for get text element value by id using innerText
-function getTextElementValueById(elementId){
+function getTextElementValueById(elementId) {
     const textElement = document.getElementById(elementId);
     const textElementValueString = textElement.innerText;
     const textElementValue = parseFloat(textElementValueString);
@@ -45,31 +45,44 @@ function getTextElementValueById(elementId){
 }
 
 //function for set text element value by id using innerText
-function setTextElementValueById(elementId, newValue){
+function setTextElementValueById(elementId, newValue) {
     const textElement = document.getElementById(elementId);
     textElement.innerText = newValue;
 }
 
 //selected player cost calculation using eventhandler[Calculate Button]
-document.getElementById('calculate-per-player').addEventListener('click', function(){
+document.getElementById('calculate-per-player').addEventListener('click', function () {
     // total selected player number
     const totalPlayerElement = document.getElementById('football-players');
     //finding the length of selected player list
     const totalPlayer = playerArray.length;
 
     //per player cost calculation
-    const perPlayerCost= getInputFieldValueById("cost-per-player");
-    const allPlayerCost = totalPlayer * perPlayerCost;
-    document.getElementById('player-expenses').innerText = allPlayerCost;
+    const perPlayerCost = getInputFieldValueById("cost-per-player");
+    //input validation
+    if (isNaN(perPlayerCost) === true) {
+        window.alert('Enter a valid Number');
+    }
+    else {
+        const allPlayerCost = totalPlayer * perPlayerCost;
+        document.getElementById('player-expenses').innerText = allPlayerCost;
+    }
+
 })
 
 //total cost calculation using eventhandler [Calculate Total Button]
-document.getElementById('calculate-total').addEventListener('click', function(){
+document.getElementById('calculate-total').addEventListener('click', function () {
     const managerCost = getInputFieldValueById("manager-cost");
     const coachCost = getInputFieldValueById("coach-cost");
     const playerExpenses = getTextElementValueById("player-expenses");
-    const totalCostCalculation = managerCost + coachCost + playerExpenses;
-    setTextElementValueById("total-cost", totalCostCalculation);
+    //input validation
+    if (isNaN(managerCost) === true || isNaN(coachCost) === true || isNaN(playerExpenses) === true) {
+        window.alert('Enter a valid Number');
+    }
+    else {
+        const totalCostCalculation = managerCost + coachCost + playerExpenses;
+        setTextElementValueById("total-cost", totalCostCalculation);
+    }
 })
 
 
