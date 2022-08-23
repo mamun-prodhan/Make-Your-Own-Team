@@ -54,8 +54,8 @@ function setTextElementValueById(elementId, newValue){
 document.getElementById('calculate-per-player').addEventListener('click', function(){
     // total selected player number
     const totalPlayerElement = document.getElementById('football-players');
-    const totalPlayer = totalPlayerElement.childNodes.length;
-    console.log(totalPlayer);
+    //finding the length of selected player list
+    const totalPlayer = playerArray.length;
 
     //per player cost calculation
     const perPlayerCost= getInputFieldValueById("cost-per-player");
@@ -66,7 +66,7 @@ document.getElementById('calculate-per-player').addEventListener('click', functi
 //total cost calculation using eventhandler [Calculate Total Button]
 document.getElementById('calculate-total').addEventListener('click', function(){
     const managerCost = getInputFieldValueById("manager-cost");
-    const coachCost = getInputFieldValueById("manager-cost");
+    const coachCost = getInputFieldValueById("coach-cost");
     const playerExpenses = getTextElementValueById("player-expenses");
     const totalCostCalculation = managerCost + coachCost + playerExpenses;
     setTextElementValueById("total-cost", totalCostCalculation);
