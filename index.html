@@ -58,7 +58,7 @@
                                   <h5 class="card-title fw-bold">Neymar Jr</h5>
                                   <small class="me-2">30 Goals</small><small class="ms-2">110 Assist</small>
                                   <div class="mt-2">
-                                    <button class=" px-5 py-1 bg-primary fw-bold  text-white">SELECT</button>
+                                    <button onclick="selectPlayer(this)" class="select-button px-5 py-1  fw-bold  text-white">SELECT</button>
                                   </div>
                                 </div>
                             </div>
@@ -71,7 +71,7 @@
                                   <h5 class="card-title fw-bold">Lionel Messi</h5>
                                   <small class="me-2">36 Goals</small><small class="ms-2">120 Assist</small>
                                   <div class="mt-2">
-                                    <button class=" px-5 py-1 bg-primary fw-bold  text-white">SELECT</button>
+                                    <button onclick="selectPlayer(this)" class="select-button px-5 py-1 fw-bold  text-white">SELECT</button>
                                   </div>
                                 </div>
                             </div>
@@ -84,7 +84,7 @@
                                   <h5 class="card-title fw-bold">Kylian Mbappe</h5>
                                   <small class="me-2">20 Goals</small><small class="ms-2">100 Assist</small>
                                   <div class="mt-2">
-                                    <button class=" px-5 py-1 bg-primary fw-bold  text-white">SELECT</button>
+                                    <button onclick="selectPlayer(this)" class="select-button px-5 py-1 fw-bold  text-white">SELECT</button>
                                   </div>
                                 </div>
                             </div>
@@ -99,7 +99,7 @@
                                   <h5 class="card-title fw-bold">Vitor Machado</h5>
                                   <small class="me-2">15 Goals</small><small class="ms-2">90 Assist</small>
                                   <div class="mt-2">
-                                    <button class=" px-5 py-1 bg-primary fw-bold  text-white">SELECT</button>
+                                    <button onclick="selectPlayer(this)" class="select-button px-5 py-1 fw-bold  text-white">SELECT</button>
                                   </div>
                                 </div>
                             </div>
@@ -112,7 +112,7 @@
                                   <h5 class="card-title fw-bold">Sergio Ramos</h5>
                                   <small class="me-2">40 Goals</small><small class="ms-2">140 Assist</small>
                                   <div class="mt-2">
-                                    <button class=" px-5 py-1 bg-primary fw-bold  text-white">SELECT</button>
+                                    <button onclick="selectPlayer(this)" class="select-button px-5 py-1 fw-bold  text-white">SELECT</button>
                                   </div>
                                 </div>
                             </div>
@@ -125,7 +125,7 @@
                                   <h5 class="card-title fw-bold">Renato Sanches</h5>
                                   <small class="me-2">10 Goals</small><small class="ms-2">70 Assist</small>
                                   <div class="mt-2">
-                                    <button class=" px-5 py-1 bg-primary fw-bold  text-white">SELECT</button>
+                                    <button onclick="selectPlayer(this)" class="select-button px-5 py-1 fw-bold  text-white">SELECT</button>
                                   </div>
                                 </div>
                             </div>
@@ -135,15 +135,11 @@
                 <div class="col-3 ">
                     <div class="row bg-dark mt-4 rounded text-white">
                         <div>
-                            <h2 class=" text-center mt-3 mb-5">Selected - V</h2>
+                            <h2 class=" text-center mt-3 mb-5">Selected - <span id="selected-player-number">0</span></h2>
                         </div>
                         <div>
-                            <ol class="fs-5">
-                                <li>Lionel Messi</li>
-                                <li>Lionel Messi</li>
-                                <li>Lionel Messi</li>
-                                <li>Lionel Messi</li>
-                                <li>Lionel Messi</li>
+                            <ol id="football-players" class="fs-5">
+                                
                             </ol>
                         </div>
                     </div>
